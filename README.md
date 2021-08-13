@@ -19,6 +19,7 @@ Once updated it should look something like this:
 4. Copy the configs as follows (in the below replace `<this repo>` with the path to wherever you cloned this repo):
 	**NOTE: if you're using a file manager and can't see the files mentioned try hitting `Ctrl+h` to show hiddin files**
 	- Copy `.dir_colors`, `.dmenurc`, `.Xresources` from `<this repo>/move_to_home/` folder to your home directory (`~` or `$HOME`)
+		- Run `xrdb -merge ~/.Xresources` in terminal, then close & re-open to see the change
 	- Copy the i3 `config` from `<this repo>/i3/` folder to `~/.i3/`
 	- Copy `dunstrc` from `<this repo>/move_to_.config/dunst/` to `~/.config/dunst/`
 	- Copy the i3status `config` from `<this repo>/move_to_.config/i3status/` to `~/.config/i3status/` (you may need to create this folder, e.g via terminal with `mkdir ~/.config/i3status`)
@@ -33,6 +34,7 @@ Once updated it should look something like this:
 	- To update the lightdm login screen:
 		- Copy the `manjaro.png` wallpaper to `/usr/share/backgrounds/` (e.g. with `sudo cp <folder you saved the wallpaper>/manjaro.png /usr/share/backgrounds/`)
 		- Move `slick-greeter.conf` from `<this repo>/move_to_etc-lightdm/` to `/etc/lightdm/` (e.g. with `sudo cp <this repo>/move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/`)
+6. Some of the changes will only be visible after rebooting
 
 ## To do
 - Write script to automate installation
