@@ -38,7 +38,7 @@ cp ./move_to_.config/i3status/config ~/.config/i3status/
 
 # DOWNLOAD THE GTK THEME AND UNZIP
 wget https://github.com/dracula/gtk/archive/master.zip
-xarchiver -d master.zip
+xarchiver -d master.zip && rm ./master.zip
 
 # CHECK IF ~/.themes EXISTS, IF NOT CREATE IT
 THEDIR=~/.themes
