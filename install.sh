@@ -17,9 +17,7 @@ sudo mv /etc/lightdm/slick-greeter.conf /etc/lightdm/slick-greeter.conf.bk
 #===================================================================================
 
 # MOVE THE HOME DIRS
-cp ./.dir_colors ~/
-cp ./.dmenurc ~/
-cp ./.Xresources ~/
+cp ./move_to_home/* ~/
 
 # MOVE THE i3 CONFIG
 cp ./i3/config ~/.i3/
