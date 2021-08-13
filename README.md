@@ -6,22 +6,23 @@ Once updated it should look something like this:
 <img src="./images/manjaro-i3-dracula-urxvt-pcmanfm.png" alt="Manjaro i3 showing URxvt and pcmanfm with Dracula theme">
 
 ## Installation
-- First, obviously, install [Manjaro i3](https://manjaro.org/downloads/community/i3/)
-- I'd suggest making backups of the default configs we'll be replacing in case something goes wrong or you want to revert the look. For example, running the following in terminal:
+1. First, obviously, install [Manjaro i3](https://manjaro.org/downloads/community/i3/)
+2. I'd suggest making backups of the default configs we'll be replacing in case something goes wrong or you want to revert the look. For example, running the following in terminal:
 	- `cp ~/.i3/config ~/.i3/config.bk`
 	- `cp ~/.config/dunst/dunstrc ~/.config/dunst/dunstrc.bk`
 	- `cp ~/.dir_colors ~/.dir_colors.bk`
 	- `cp ~/.dmenurc ~/.dmenurc.bk`
 	- `cp ~/.Xresources ~/.Xresources.bk`
 	- `sudo cp /etc/lightdm/slick-greeter.conf /etc/lightdm/slick-greeter.conf.bk` (`sudo` needed since we're working in the protected `/etc` dir)
-- Clone this repo:
+3. Clone this repo:
 	- `git clone https://github.com/nealbrophy/manjaro-i3-dracula`
-- Copy the configs as follows (if you're using a file manager and can't see these files, make sure you're viewing hidden files by hitting `Ctrl+h`):
-	*In the below commands `<this repo>` is a placeholder meaning __wherever you cloned the repo to__ e.g. if you cloned in your Downloads it'd be `~/Downloads/manjaro-i3-dracula/`*
+4. Copy the configs as follows (in the below replace `<this repo>` with the path to wherever you cloned this repo):
+	**NOTE: if you're using a file manager and can't see the files mentioned try hitting `Ctrl+h` to show hiddin files**
 	- Copy `.dir_colors`, `.dmenurc`, `.Xresources` from `<this repo>/move_to_home/` folder to your home directory (`~` or `$HOME`)
 	- Copy the i3 `config` from `<this repo>/i3/` folder to `~/.i3/`
 	- Copy `dunstrc` from `<this repo>/move_to_.config/dunst/` to `~/.config/dunst/`
 	- Copy the i3status `config` from `<this repo>/move_to_.config/i3status/` to `~/.config/i3status/` (you may need to create this folder, e.g via terminal with `mkdir ~/.config/i3status`)
+5. Get the dracula theme & wallpaper so we can update GTK, lightdm etc
 	- Grab the [Dracula GTK files](https://draculatheme.com/gtk) (including the *separate* _icons_ download on the same page)
 		- Extract the `gtk-master.zip` GKT-theme folder and copy to `~/.themes/` (just create the themes folder in your home dir if it doesn't already exist, you may want to rename the folder from "gtk-master" to something more memorable)
 		- Extract the `Dracula.zip` icons folder and copy to `~/.icons/` (create icons folder in home if not already there)
