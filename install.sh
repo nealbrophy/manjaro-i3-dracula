@@ -17,7 +17,9 @@ sudo mv /etc/lightdm/slick-greeter.conf /etc/lightdm/slick-greeter.conf.bk
 #===================================================================================
 
 # MOVE THE HOME DIRS
-cp ./move_to_home/* ~/
+cp ./move_to_home/.dir_colors ~/.dir_colors
+cp ./move_to_home/.dmenurc ~/.dmenurc
+cp ./move_to_home/.Xresources ~/.Xresources
 
 # MOVE THE i3 CONFIG
 cp ./i3/config ~/.i3/
@@ -36,7 +38,7 @@ cp ./move_to_.config/i3status/config ~/.config/i3status/
 
 # DOWNLOAD THE GTK THEME AND UNZIP
 wget https://github.com/dracula/gtk/archive/master.zip
-unzip ./gtk-master.zip
+xarchiver -d master.zip
 
 # CHECK IF ~/.themes EXISTS, IF NOT CREATE IT
 THEDIR=~/.themes
@@ -51,7 +53,7 @@ rm -r ./Dracula
 
 # DOWNLOAD THE ICON THEME AND UNZIP
 wget https://github.com/dracula/gtk/files/5214870/Dracula.zip
-unzip ./Dracula.zip
+xarchiver -d Dracula.zip
 
 # CHECK IF ~/.icons EXISTS, IF NOT CREATE IT
 THEDIR=~/.icons
