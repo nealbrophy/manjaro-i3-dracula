@@ -67,7 +67,7 @@ rm -r ./Dracula
 
 # DOWNLOAD THE WALLPAPERS AND UNZIP
 wget https://github.com/dracula/wallpaper/archive/master.zip
-unzip ./wallpaper-master.zip
+xarchiver -d ./wallpaper-master.zip
 
 # MOVE WALLPAPER TO NEEDED DIRS
 cp ./wallpaper-master/base.png ~/Pictures/
@@ -76,5 +76,11 @@ sudo cp ./wallpaper-master/manjaro.png /usr/share/backgrounds/
 # MOVE THE LIGHTDM CONFIG
 sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
 
+# REFRESH XRESOURCES
 xrdb -merge ~/.Xresources
+
+# FINISHED
+echo "Finished!! Now you need to select the Widget & Icon themes using lxappearance and then REBOOT!"
+
+
 
