@@ -67,7 +67,7 @@ rm -r ./Dracula
 
 # DOWNLOAD THE WALLPAPERS AND UNZIP
 wget https://github.com/dracula/wallpaper/archive/master.zip
-xarchiver -d ./wallpaper-master.zip
+xarchiver -d ./master.zip
 
 # MOVE WALLPAPER TO NEEDED DIRS
 cp ./wallpaper-master/base.png ~/Pictures/
