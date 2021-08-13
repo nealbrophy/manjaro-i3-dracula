@@ -5,7 +5,7 @@ Once updated it should look something like this:
 <img src="./images/manjaro-i3-dracula-desktop.png" alt="Manjaro i3 desktop with Dracula theme">
 <img src="./images/manjaro-i3-dracula-urxvt-pcmanfm.png" alt="Manjaro i3 showing URxvt and pcmanfm with Dracula theme">
 
-## Installation
+## Installation [Manual]
 1. First, obviously, install [Manjaro i3](https://manjaro.org/downloads/community/i3/)
 2. I'd suggest making backups of the default configs we'll be replacing in case something goes wrong or you want to revert the look. For example, running the following in terminal:
 	- `cp ~/.i3/config ~/.i3/config.bk`
@@ -36,9 +36,25 @@ Once updated it should look something like this:
 		- Move `slick-greeter.conf` from `<this repo>/move_to_etc-lightdm/` to `/etc/lightdm/` (e.g. with `sudo cp <this repo>/move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/`)
 6. Some of the changes will only be visible after rebooting
 
-## To do
-- Write script to automate installation
+## Installation [Script based] **BE CAREFUL**
+Make sure you take a look at the install script before running it so you understand what it's going to do and that it will work for your particular system. As of August 13th I've tested it on a fresh install using the current Manjaro i3 ISO on both a desktop and laptop without issues.
+
+*If you're a happy to proceed....*
+- After cloning this repo, use `cd` to move (in terminal) to the cloned repo directory then run `sh install.sh` and wait for the "FINISHED" message.	
+
+## Uninstall [Manual]
+Whether you manually installed or used the script you just need to reverse those steps, so for example if you followed the naming conventsion I use above (or if you used the script):
+	- Remove the `.Xresources`, `.dmenurc`, and `.dir_colors` files from your HOME dir `~/` e.g. run `rm ~/.dmenurc && rm ~/.dir_colors && rm ~/.Xresources` in terminal
+	- Move the original files back e.g. `mv ~/.Xresources.bk ~/.Xresources && mv ~/.dmenurc.bk ~/.dmenurc && mv ~/.dir_colors.bk ~/.dir_colors`
+	- Remove the slick-greeter.conf file from `/etc/lightdm` and move the original back `sudo rm /etc/lightdm/slick-greeter.conf && mv /etc/lightdm/slick-greeter.conf.bk /etc/lightdm/slick-greeter.conf`
+	- Remove the `dunstrc` and replace the orig e.g. `rm ~/.config/dunst/dunstrc && mv ~/.config/dunst/dunstrc.bk ~/.config/dunst/dunstrc`
+	- Remove the i3status folder altogether (the default is in `/etc/i3status` e.g. `rm -r ~/.config/i3status`
+	- Remove the i3 config and replace the original e.g. `rm ~/.i3/config && mv ~/.i3/config.bk ~/.i3/config`
+	- Lastly use `lxappearance` to change the Widgets & Icons and `nitrogen` to change the desktop wallpaper
 	
+
+## Issues
+URxvt letterspace seems to be a little off at first with Hack-Regular. If the spacing is too large you can set `URxvt.letterspace: -1`, however, I've found after a few reboots the spacing then seems to cramped and it's necessary to remove letterspacing value.
 
 ## Credits
 - [Dracula](https://draculatheme.com/) theme is by Zeno Rocha and lots of lovely contributors. You should [buy Pro](https://draculatheme.com/pro) to support it.

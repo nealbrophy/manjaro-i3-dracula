@@ -73,6 +73,9 @@ xarchiver -d ./master.zip
 cp ./wallpaper-master/base.png ~/Pictures/
 sudo cp ./wallpaper-master/manjaro.png /usr/share/backgrounds/
 
+# SET DESKTOP WALLPAPER
+nitrogen --set-zoom-fill ~/Pictures/base.png
+
 # MOVE THE LIGHTDM CONFIG
 sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
 
