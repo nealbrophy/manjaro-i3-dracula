@@ -73,11 +73,18 @@ xarchiver -d ./master.zip
 cp ./wallpaper-master/base.png ~/Pictures/
 sudo cp ./wallpaper-master/manjaro.png /usr/share/backgrounds/
 
-# SET DESKTOP WALLPAPER
-nitrogen --set-zoom-fill ~/Pictures/base.png
+# DOWNLOAD ORCHIS PURPLE DARK THEME AND EXTRAC
+wget https://github.com/vinceliuice/Orchis-theme/blob/master/release/Orchis-purple.tar.xz
+xarchiver -d ./Orchis-purple.tar.xz && cd Orchis-purple
+
+# MOVE ORCHIS THEME TO USR/SHARE/THEMES DIR
+sudo cp -r ./Orchis-purple-dark /usr/share/themes/
 
 # MOVE THE LIGHTDM CONFIG
 sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
+
+# SET DESKTOP WALLPAPER
+nitrogen --set-zoom-fill ~/Pictures/base.png
 
 # REFRESH XRESOURCES
 xrdb -merge ~/.Xresources

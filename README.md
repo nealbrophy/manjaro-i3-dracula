@@ -31,6 +31,8 @@ Once updated it should look something like this:
 	- Grab the [Dracula Wallpapers](https://draculatheme.com/wallpaper) and save the Manjaro & Base variants somewhere you'll remember
 		- Launch `nitrogen`, click `Preferences` and add the directory you saved the wallpaper to, click OK etc
 		- Back on the main nitrogen view, select whichever wallpaper you want and click apply (I think pairing base.png as desktop wallpaper with manjaro.png as lightdm background is a nice combo)
+	- Grab the `Orchis Purple` theme by [vinceliuice](https://github.com/vinceliuice) to use with lightdm (download the `Orchis-purple.tar.xz` from [here](https://github.com/vinceliuice/Orchis-theme/blob/master/release)
+		- Extract the tarball and move/copy the `Orchis-purple-dark` folder to `/usr/share/themes/`
 	- To update the lightdm login screen:
 		- Copy the `manjaro.png` wallpaper to `/usr/share/backgrounds/` (e.g. with `sudo cp <folder you saved the wallpaper>/manjaro.png /usr/share/backgrounds/`)
 		- Move `slick-greeter.conf` from `<this repo>/move_to_etc-lightdm/` to `/etc/lightdm/` (e.g. with `sudo cp <this repo>/move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/`)
@@ -40,7 +42,8 @@ Once updated it should look something like this:
 Make sure you take a look at the install script before running it so you understand what it's going to do and that it will work for your particular system. As of August 13th I've tested it on a fresh install using the current Manjaro i3 ISO on both a desktop and laptop without issues.
 
 *If you're a happy to proceed....*
-- After cloning this repo, use `cd` to move (in terminal) to the cloned repo directory then run `sh install.sh` and wait for the "FINISHED" message.	
+- After cloning this repo, use `cd` to move (in terminal) to the cloned repo directory then run `sh install.sh` and wait for the "FINISHED" message.
+- __NOTE__: As mentioned in the *FINISHED* message text, you still need to use `lxappearance` to select the *Dracula* theme for Widgets & Icons
 
 ## Uninstall [Manual]
 Whether you manually installed or used the script you just need to reverse those steps, so for example if you followed the naming conventsion I use above (or if you used the script):
@@ -51,7 +54,7 @@ Whether you manually installed or used the script you just need to reverse those
 - Remove the i3status folder altogether (the default is in `/etc/i3status` e.g. `rm -r ~/.config/i3status`
 - Remove the i3 config and replace the original e.g. `rm ~/.i3/config && mv ~/.i3/config.bk ~/.i3/config`
 - Lastly use `lxappearance` to change the Widgets & Icons and `nitrogen` to change the desktop wallpaper
-	
+
 
 ## Issues
 URxvt letterspace seems to be a little off at first with Hack-Regular. If the spacing is too large you can set `URxvt.letterspace: -1`, however, I've found after a few reboots the spacing then seems to cramped and it's necessary to remove letterspacing value.
@@ -59,4 +62,5 @@ URxvt letterspace seems to be a little off at first with Hack-Regular. If the sp
 ## Credits
 - [Dracula](https://draculatheme.com/) theme is by Zeno Rocha and lots of lovely contributors. You should [buy Pro](https://draculatheme.com/pro) to support it.
 - [Manjaro](https://manjaro.org/) is an excellent distro and you should support it on [OpenCollective](https://opencollective.com/manjaro/donate)
-- `.dir_colors` file is from Josh Benham's repo [here](https://github.com/joshbenham/linux-dotfiles/blob/master/dircolors/Dracula.dircolors)
+- [Orchis](https://github.com/vinceliuice/Orchis-theme) theme is by the talented & prolific [vinceliuice](https://github.com/vinceliuice)
+- `.dir_colors` file is from [Josh Benham](https://github.com/joshbenham)'s dotfiles repo [here](https://github.com/joshbenham/linux-dotfiles/blob/master/dircolors/Dracula.dircolors)
