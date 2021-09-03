@@ -10,6 +10,7 @@ mv ~/.config/dunst/dunstrc ~/.config/dunst/dunstrc.bk
 mv ~/.dir_colors ~/.dir_colors.bk
 mv ~/.dmenurc ~/.dmenurc.bk
 mv ~/.Xresources ~/.Xresources.bk
+cp ~/.config/gtk-3.0/settings.ini ~/.config/gtk-3.0/settings.ini.bk
 sudo mv /etc/lightdm/slick-greeter.conf /etc/lightdm/slick-greeter.conf.bk
 
 #===================================================================================
@@ -86,18 +87,17 @@ sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
 # SET DESKTOP WALLPAPER
 nitrogen --set-zoom-fill ~/Pictures/base.png
 
-# SET GTK THEME
-gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
-gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
-
 # SET ICON THEME
-gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+sed -i 's/gtk-icon-theme-name=Papirus-Adapta-Nokto-Maia/gtk-icon-theme-name=Dracula/g'
+
+# SET GTK THEME
+sed -i 's/gtk-theme-name=Adapta-Nokto-Eta-Maia/gtk-theme-name=Dracula/g'
 
 # REFRESH XRESOURCES
 xrdb -merge ~/.Xresources
 
 # FINISHED
-echo "Finished!! Now you need to select the Widget & Icon themes using lxappearance and then REBOOT!"
+echo "Finished!!"
 
 
 

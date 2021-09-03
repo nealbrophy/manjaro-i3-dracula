@@ -43,7 +43,7 @@ Make sure you take a look at the install script before running it so you underst
 
 *If you're a happy to proceed....*
 - After cloning this repo, use `cd` to move (in terminal) to the cloned repo directory then run `sh install.sh` and wait for the "FINISHED" message.
-- __NOTE__: As mentioned in the *FINISHED* message text, you still need to use `lxappearance` to select the *Dracula* theme for Widgets & Icons
+- Reboot to refresh everything.
 
 ## Uninstall [Manual]
 Whether you manually installed or used the script you just need to reverse those steps, so for example if you followed the naming conventsion I use above (or if you used the script):
