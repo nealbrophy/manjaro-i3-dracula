@@ -74,7 +74,7 @@ cp ./wallpaper-master/base.png ~/Pictures/
 sudo cp ./wallpaper-master/manjaro.png /usr/share/backgrounds/
 
 # DOWNLOAD ORCHIS PURPLE DARK THEME AND EXTRAC
-wget https://github.com/vinceliuice/Orchis-theme/blob/master/release/Orchis-purple.tar.xz
+wget https://github.com/vinceliuice/Orchis-theme/raw/master/release/Orchis-purple.tar.xz
 xarchiver -d ./Orchis-purple.tar.xz && cd Orchis-purple
 
 # MOVE ORCHIS THEME TO USR/SHARE/THEMES DIR
@@ -85,6 +85,10 @@ sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
 
 # SET DESKTOP WALLPAPER
 nitrogen --set-zoom-fill ~/Pictures/base.png
+
+# SET GTK THEME
+gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 
 # REFRESH XRESOURCES
 xrdb -merge ~/.Xresources
