@@ -90,6 +90,9 @@ nitrogen --set-zoom-fill ~/Pictures/base.png
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
 gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 
+# SET ICON THEME
+gsettings set org.gnome.desktop.interface icon-theme "Dracula"
+
 # REFRESH XRESOURCES
 xrdb -merge ~/.Xresources
 
