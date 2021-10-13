@@ -82,16 +82,20 @@ xarchiver -d ./Orchis-purple.tar.xz && cd Orchis-purple
 sudo cp -r ./Orchis-purple-dark /usr/share/themes/
 
 # MOVE THE LIGHTDM CONFIG
+cd ../
 sudo cp ./move_to_etc-lightdm/slick-greeter.conf /etc/lightdm/
 
 # SET DESKTOP WALLPAPER
 nitrogen --set-zoom-fill ~/Pictures/base.png
 
 # SET ICON THEME
-sed -i 's/gtk-icon-theme-name=Papirus-Adapta-Nokto-Maia/gtk-icon-theme-name=Dracula/g'
+sed -i 's/gtk-icon-theme-name=Papirus-Adapta-Nokto-Maia/gtk-icon-theme-name=Dracula/g' ~/.config/gtk-3.0/settings.ini
 
 # SET GTK THEME
-sed -i 's/gtk-theme-name=Adapta-Nokto-Eta-Maia/gtk-theme-name=Dracula/g'
+sed -i 's/gtk-theme-name=Adapta-Nokto-Eta-Maia/gtk-theme-name=Dracula/g' ~/.config/gtk-3.0/settings.ini
+
+# SET QT THEME
+kvantummanager --set Dracula
 
 # REFRESH XRESOURCES
 xrdb -merge ~/.Xresources
